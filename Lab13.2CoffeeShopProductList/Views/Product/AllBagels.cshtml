@@ -1,0 +1,42 @@
+﻿<style>
+    .grid{
+        display: grid;
+        grid-template-columns: 1.5fr 1.25fr 1fr 1fr 1.5fr;
+        text-align: center;
+    }
+</style>
+@model List<Product>
+@{
+    ViewData["Title"] = "Bagels";
+}
+
+<div>
+    <h1 class="text-center">Bagel's</h1>
+</div>
+<br />
+<br />
+<br />
+<div class="grid">
+    @foreach (Product prod in Model)
+    {
+        <div>
+        </div>
+        <div>
+            <a href="/product/details/@prod.id">@prod.name</a>
+        </div>
+        <div>
+            <a href="/product/editform/@prod.id">Edit</a>
+        </div>
+        <div>
+            <a href="/product/delete/@prod.id">Delete</a>
+        </div>
+        <div>
+        </div>
+    }
+</div>
+
+<div/>
+
+<br />
+<br />
+<a class="text-center" href="/product/addform">Add New Product</a>
